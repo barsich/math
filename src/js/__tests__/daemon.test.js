@@ -1,0 +1,19 @@
+import Daemon from '../daemon';
+
+test('should create correct object instance', () => {
+  expect(new Daemon('daemon')).toBeInstanceOf(Daemon);
+});
+
+test('should create correct object instance with correct props', () => {
+  const expected = {
+    name: 'Alex',
+    type: 'daemon',
+    health: 100,
+    level: 1,
+    _attack: 10,
+    defence: 40,
+    distance: 1,
+    _stoned: false,
+  };
+  expect(expected).toEqual(new Daemon('Alex'));
+});
